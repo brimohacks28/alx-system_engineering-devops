@@ -1,1 +1,9 @@
- This is a readme file Explaining what needs to be done.
+ # print_cwd.sh
+
+ This script prints the  absolute path of the current working directory.
+
+## Usage
+
+```bash
+./print_cwd.sh
+

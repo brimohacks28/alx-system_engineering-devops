@@ -1,2 +1,2 @@
 #!/bin/bash
-cd..
+[ ${#PWD} -ne 5 ] && cd ..

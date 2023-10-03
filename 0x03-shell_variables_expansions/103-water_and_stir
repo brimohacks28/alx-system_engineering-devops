@@ -1,2 +1,3 @@
 #!/bin/bash
-echo "obase=bestchol; $WATER + $STIR" | bc
+echo "ibase=water obase=bestchol ((WATER + STIR))" bc
+

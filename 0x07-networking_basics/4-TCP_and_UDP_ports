@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+listening_sockets=$(netstat -tuln | grep LISTEN)
+echo "Protocol   Local Address         PID/program detail
+while IFS= read -r line; do
+    protocol=$(echo "$line" | awk '{print $1}')
+    local_address=$(echo "$line" | awk '{print $4}')
+    pid=$(echo "$line" | awk '{print $7}' | cut -d '/' -f 1)
+    
+    program_name=$(ps -p "$pid" -o comm=)
+    
+    echo "$protocol        $local_address        $pid/$program_name"
+done <<< "$listening_sockets"
+

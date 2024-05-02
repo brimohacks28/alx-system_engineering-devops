@@ -1,3 +1,4 @@
+
 global
 	log /dev/log	local0
 	log /dev/log	local1 notice
@@ -34,18 +35,19 @@ defaults
 	errorfile 504 /etc/haproxy/errors/504.http
 
 # start of parameters for aysuarex.tech
-frontend brianmaema.tech-http-frontend
+frontend aysuarex.tech-http-frontend
 	bind	 *:80
 	http-request set-header X-Forwarded-Proto http
-	default_backend	 brianmaema.tech-back
+	default_backend	 aysuarex.tech-backend
 
-frontend  brianmaema.tech-https-frontend
+
+frontend  aysuarex.tech-https-frontend
 	bind *:443 ssl crt /etc/ssl/aysuarex.tech.pem
 	http-request set-header X-Forwarded-Proto https
         default_backend aysuarex.tech-backend
 
 
-backend brianmaema.tech-backend
+backend aysuarex.tech-backend
         balance roundrobin
         server 914-web-01 44.210.150.159:80 check
         server 914-web-02 35.173.47.15:80 check

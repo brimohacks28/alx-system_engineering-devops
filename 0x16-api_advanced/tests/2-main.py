@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+2-main
+"""
 import sys
 
 if __name__ == '__main__':
@@ -8,7 +11,6 @@ if __name__ == '__main__':
     else:
         result = recurse(sys.argv[1])
         if result is not None:
-            print(result)
             print(len(result))
         else:
             print("None")
